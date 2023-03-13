@@ -31,12 +31,45 @@ let tipoAnimale = document.querySelector("#specie");
 let nomeRazza = document.querySelector("#razza");
 let invio = document.querySelector("#invio");
 
-//creo gli oggetti e li salvo in un array
+
+
 //creo tags e classi  per mostrare gli oggetti e li mostro
-// avvio il tutto con un eventListener
 let objArray = [];
 let target = document.querySelector("#target");
-invio.addEventListener("click", () => {
+
+function stampa() {
+  let div = document.createElement("div");
+  let p = document.createElement("p");
+  let p1 = document.createElement("p");
+  let p2 = document.createElement("p");
+  let p3 = document.createElement("p");
+
+  div.classList.add("alert");
+  div.classList.add("alert-info");
+  div.classList.add("text-center");
+
+  div.appendChild(p);
+  div.appendChild(p1);
+  div.appendChild(p2);
+  div.appendChild(p3);
+
+  let ultimoElem = objArray.length - 1;
+
+  let animale = objArray[ultimoElem].petName;
+  let owner = objArray[ultimoElem].ownerName;
+  let species = objArray[ultimoElem].species;
+  let razze = objArray[ultimoElem].breed;
+
+  p.textContent = `nome animale: ${animale};`;
+  p1.textContent = `nome padrone: ${owner}; `;
+  p2.textContent = `specie: ${species};`;
+  p3.textContent = `razza: ${razze};`;
+  console.log(objArray);
+  target.appendChild(div);
+}
+
+//creo gli oggetti e li salvo in un array
+function salvataggio() {
   let namePet = animale.value;
   let nameOwnwer = padrone.value;
   let typePet = tipoAnimale.value;
@@ -51,36 +84,10 @@ invio.addEventListener("click", () => {
   padrone.value = null;
   tipoAnimale.value = null;
   nomeRazza.value = null;
+}
 
-  function stampa() {
-    let div = document.createElement("div");
-    let p = document.createElement("p");
-    let p1 = document.createElement("p");
-    let p2 = document.createElement("p");
-    let p3 = document.createElement("p");
-
-    div.classList.add("alert");
-    div.classList.add("alert-info");
-    div.classList.add("text-center");
-
-    div.appendChild(p);
-    div.appendChild(p1);
-    div.appendChild(p2);
-    div.appendChild(p3);
-
-    let ultimoElem = objArray.length - 1;
-
-    let animale = objArray[ultimoElem].petName;
-    let owner = objArray[ultimoElem].ownerName;
-    let species = objArray[ultimoElem].species;
-    let razze = objArray[ultimoElem].breed;
-
-    p.textContent = `nome animale: ${animale};`;
-    p1.textContent = `nome padrone: ${owner}; `;
-    p2.textContent = `specie: ${species};`;
-    p3.textContent = `razza: ${razze};`;
-    console.log(objArray);
-    target.appendChild(div);
-  }
+// avvio il tutto con un eventListener
+invio.addEventListener("click", () => {
+  salvataggio();
   stampa();
 });
