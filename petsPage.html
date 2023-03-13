@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Pets Page</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container mt-5 text-center">
+      <h1>registra il tuo animale</h1>
+    </div>
+    <div class="container">
+      <form
+        class="row g-3 my-5 border border-1 border-secondary bg-light p-4 rounded-4"
+      >
+        <div class="col-md-6">
+          <label for="nomeAnimale" class="form-label">Pet Name</label>
+          <input
+            type="text"
+            class="form-control"
+            id="nomeAnimale"
+            placeholder="Nome animale"
+          />
+        </div>
+        <div class="col-md-6">
+          <label for="nomePadrone" class="form-label">Owner Name</label>
+          <input
+            type="text"
+            class="form-control"
+            id="nomePadrone"
+            placeholder="Nome padrone"
+          />
+        </div>
+        <div class="col-12">
+          <label for="specie" class="form-label">Species</label>
+          <input
+            type="text"
+            class="form-control"
+            id="specie"
+            placeholder="Dog,cat,cow,ecc..."
+          />
+        </div>
+        <div class="col-12">
+          <label for="razza" class="form-label">Breed</label>
+          <input
+            type="text"
+            class="form-control"
+            id="razza"
+            placeholder="Labrador,Soriano,nano,ecc..."
+          />
+        </div>
+
+        <div class="col-12">
+          <button type="button" id="invio" class="btn btn-primary">
+            Invia!
+          </button>
+        </div>
+      </form>
+    </div>
+    <div class="container">
+      <div id="target"></div>
+    </div>
+    <script src="js/petsPage.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
